@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import drawerReducer from "./drawerSlice";
+import tabReducer from "./tabSlice";
 
 export const store = configureStore({
   reducer: {
     drawer: drawerReducer,
+    tab: tabReducer,
   },
 });
 

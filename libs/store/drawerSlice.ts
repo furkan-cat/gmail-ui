@@ -13,5 +13,4 @@ const drawerSlice = createSlice({
 });
 
 export const { toggleMenu } = drawerSlice.actions;
-
 export default drawerSlice.reducer;
