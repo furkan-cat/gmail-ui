@@ -9,19 +9,17 @@ import AppBar from "@/sections/AppBar/AppBar";
 import MenuDrawer from "@/sections/MenuDrawer/MenuDrawer";
 import Toolbar from "@/sections/Toolbar/Toolbar";
 import CustomTab from "@/sections/Tab/Tab";
+import { grey } from "@mui/material/colors";
 // import CustomTab from "@/sections/Tab/Tab";
 
-const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })<{
-  open?: boolean;
-}>(({ theme }) => ({
+const Main = styled("main")(({ theme }) => ({
   flexGrow: 1,
-  padding: theme.spacing(3),
+  padding: "16px",
+  backgroundColor: "#f5f5f5",
   overflow: "scrollY",
 }));
 
 const AppLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
-  const showMenu = useSelector((state: RootState) => state.drawer.showMenu);
-
   return (
     <>
       <Stack direction="row">
@@ -37,9 +35,10 @@ const AppLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
             overflow="hidden"
           >
             <MenuDrawer />
-            <CustomTab />
+            {/* <CustomTab /> */}
+
+            <Main>{children}</Main>
           </Stack>
-          <Main open={showMenu}>{children}</Main>
         </Box>
       </Stack>
       <CssBaseline />

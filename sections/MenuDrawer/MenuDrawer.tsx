@@ -67,7 +67,7 @@ const MenuDrawer: React.FC = () => {
   };
 
   return (
-    <CustomDrawer open={showMenu} bgcolor="transparent">
+    <CustomDrawer open={showMenu} bgcolor="#f5f5f5">
       <List>
         {listItem.map((item) => {
           const isActive = actives == item.handle;
