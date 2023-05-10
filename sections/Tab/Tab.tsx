@@ -1,14 +1,8 @@
 import * as React from "react";
-import { Tabs, Tab, Typography, Box } from "@mui/material";
+import { Tabs, Tab, Box } from "@mui/material";
 import { setTab } from "@/libs/store/tabSlice";
-import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "@/libs/store";
-
-interface PanelProps {
-    children?: React.ReactNode;
-    index: number;
-    value: number;
-  }
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "@/libs/store";
 
 function a11yProps(index: number) {
   return {
@@ -20,32 +14,11 @@ function a11yProps(index: number) {
 export default function CustomTab() {
   const [value, setValue] = React.useState(0);
   const dispatch = useDispatch<AppDispatch>();
-  const currentTab = useSelector((state: RootState) => state.tab.currentTab);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
     dispatch(setTab(newValue));
   };
-
-  function Panel(props: PanelProps) {
-    const { children, value, index, ...rest } = props;
-
-    return (
-      <div
-        role="tabpanel"
-        hidden={currentTab !== index}
-        id={`simple-tabpanel-${index}`}
-        aria-labelledby={`simple-tab-${index}`}
-        {...rest}
-      >
-        {currentTab === index && (
-          <Box sx={{ p: 3 }}>
-            <Typography>{children}</Typography>
-          </Box>
-        )}
-      </div>
-    );
-  }
 
   return (
     <Box sx={{ width: "100%" }}>
@@ -88,15 +61,6 @@ export default function CustomTab() {
           />
         </Tabs>
       </Box>
-      {/* <Panel value={currentTab} index={0}>
-        Item One
-      </Panel>
-      <Panel value={currentTab} index={1}>
-        Item Two
-      </Panel>
-      <Panel value={currentTab} index={2}>
-        Item Three
-      </Panel> */}
     </Box>
   );
 }

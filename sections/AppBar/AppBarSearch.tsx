@@ -9,10 +9,11 @@ import {
   Stack,
   Button,
 } from "@mui/material";
+import { Input } from "@/components";
+
 import SearchIcon from "@mui/icons-material/Search";
 import TuneIcon from "@mui/icons-material/Tune";
 
-import { Input } from "@/components";
 
 const AppBarSearch = () => {
   const wrapperRef = useRef(null);

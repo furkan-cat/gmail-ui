@@ -6,7 +6,7 @@ import { Box, AppBar as MUIAppBar, Stack } from "@mui/material";
 import AppBarSearch from "./AppBarSearch";
 import AppBarButtons from "./AppBarButtons";
 
-import { CONFIG, ROUTES } from "@/libs/constants";
+import { CONFIG } from "@/libs/constants";
 
 import { grey } from "@mui/material/colors";
 
