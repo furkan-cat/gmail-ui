@@ -8,13 +8,15 @@ import { Box, styled, CssBaseline, Stack } from "@mui/material";
 import AppBar from "@/sections/AppBar/AppBar";
 import MenuDrawer from "@/sections/MenuDrawer/MenuDrawer";
 import Toolbar from "@/sections/Toolbar/Toolbar";
+import CustomTab from "@/sections/Tab/Tab";
+// import CustomTab from "@/sections/Tab/Tab";
 
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })<{
   open?: boolean;
 }>(({ theme }) => ({
   flexGrow: 1,
   padding: theme.spacing(3),
-  overflow: "scroll",
+  overflow: "scrollY",
 }));
 
 const AppLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
@@ -35,9 +37,9 @@ const AppLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
             overflow="hidden"
           >
             <MenuDrawer />
-
-            <Main open={showMenu}>{children}</Main>
+            <CustomTab />
           </Stack>
+          <Main open={showMenu}>{children}</Main>
         </Box>
       </Stack>
       <CssBaseline />

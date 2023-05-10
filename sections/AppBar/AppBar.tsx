@@ -1,28 +1,18 @@
-import type { AppDispatch } from "@/libs/store";
+import Image from "next/image";
+import Link from "next/link";
 
-import { useDispatch } from "react-redux";
+import { Box, AppBar as MUIAppBar, Stack } from "@mui/material";
 
-import {
-  IconButton,
-  AppBar as MUIAppBar,
-  Toolbar,
-  Typography,
-} from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
+import AppBarSearch from "./AppBarSearch";
+import AppBarButtons from "./AppBarButtons";
 
-import { toggleMenu } from "@/libs/store/drawerSlice";
+import { CONFIG, ROUTES } from "@/libs/constants";
 
 import { grey } from "@mui/material/colors";
 
 export type AppBarProps = {};
 
 const AppBar: React.FC<AppBarProps> = () => {
-  const dispatch = useDispatch<AppDispatch>();
-
-  const handleDrawerOpen = () => {
-    dispatch(toggleMenu());
-  };
-
   return (
     <MUIAppBar
       position="sticky"
@@ -33,11 +23,22 @@ const AppBar: React.FC<AppBarProps> = () => {
       }}
       color="transparent"
     >
-      <Toolbar>
-        <Typography variant="h6" noWrap component="div" ml={3}>
-          Persistent drawer
-        </Typography>
-      </Toolbar>
+      <Stack direction="row" minHeight={64} alignItems="center" width="100%">
+        <Box width={CONFIG.drawerWidth} pl={2}>
+          {/* Brand */}
+          <Link href={ROUTES.HOME}>
+            <Image src="/logo.png" alt="Gmail" width={109} height={40} />
+          </Link>
+        </Box>
+
+        {/* Search */}
+        <Box maxWidth={720} width="100%">
+          <AppBarSearch />
+        </Box>
+
+        {/* Buttons */}
+        <AppBarButtons />
+      </Stack>
     </MUIAppBar>
   );
 };
