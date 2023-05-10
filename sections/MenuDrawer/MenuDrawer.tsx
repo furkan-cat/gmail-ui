@@ -56,8 +56,6 @@ const MenuDrawer: React.FC = () => {
 
   const handleClick = (item: any) => {
     setActives((prev) => {
-      console.log(prev, item.handle);
-
       if (item.handle === prev) {
         return null;
       }
@@ -102,7 +100,6 @@ const MenuDrawer: React.FC = () => {
                       <ListItemButton
                         sx={{
                           ml: 1.2,
-                          backgroundColor: isActive ? grey[200] : null,
                           borderRadius: "25px",
                           paddingLeft: "16px",
                           paddingRight: " 12px",
