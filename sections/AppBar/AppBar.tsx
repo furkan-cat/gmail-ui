@@ -26,7 +26,7 @@ const AppBar: React.FC<AppBarProps> = () => {
       <Stack direction="row" minHeight={64} alignItems="center" width="100%">
         <Box width={CONFIG.drawerWidth} pl={2}>
           {/* Brand */}
-          <Link href={ROUTES.HOME}>
+          <Link href={"#"}>
             <Image src="/logo.png" alt="Gmail" width={109} height={40} />
           </Link>
         </Box>

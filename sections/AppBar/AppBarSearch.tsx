@@ -13,7 +13,6 @@ import SearchIcon from "@mui/icons-material/Search";
 import TuneIcon from "@mui/icons-material/Tune";
 
 import { Input } from "@/components";
-import { grey } from "@mui/material/colors";
 
 const AppBarSearch = () => {
   const wrapperRef = useRef(null);
