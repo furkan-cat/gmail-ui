@@ -1,13 +1,20 @@
 import Image from "next/image";
+import { useDispatch } from "react-redux";
+import { Button } from "@/components";
+import { togglePopover } from "@/libs/store/settingsSlice";
 
 import { Avatar, Box, IconButton, Stack } from "@mui/material";
 import SettingsOutlined from "@mui/icons-material/SettingsOutlined";
 import AppsRoundedIcon from "@mui/icons-material/AppsRounded";
 import HelpOutlineRoundedIcon from "@mui/icons-material/HelpOutlineRounded";
 
-import { Button } from "@/components";
-
 const AppBarButtons: React.FC = () => {
+  const dispatch = useDispatch();
+
+  const handleToggleSettingsPopover = () => {
+    dispatch(togglePopover());
+  };
+
   return (
     <Stack
       direction="row"
@@ -21,9 +28,17 @@ const AppBarButtons: React.FC = () => {
         <IconButton color="inherit" aria-label="Help">
           <HelpOutlineRoundedIcon />
         </IconButton>
-        <IconButton color="inherit" aria-label="Settings">
-          <SettingsOutlined />
-        </IconButton>
+
+        <Box>
+          <IconButton
+            color="inherit"
+            aria-label="Settings"
+            onClick={handleToggleSettingsPopover}
+          >
+            <SettingsOutlined />
+          </IconButton>
+        </Box>
+
         <IconButton color="inherit" aria-label="Apps">
           <AppsRoundedIcon />
         </IconButton>
