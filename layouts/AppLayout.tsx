@@ -23,9 +23,9 @@ const AppLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
 
           <Stack
             direction="row"
-            flexGrow={1}
             height="calc(100vh - 64px)"
             overflow="hidden"
+            bgcolor="#f5f5f5"
           >
             <MenuDrawer />
 

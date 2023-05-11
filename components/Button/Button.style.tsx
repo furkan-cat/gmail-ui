@@ -1,7 +1,6 @@
 import { ButtonProps } from "./Button";
 
 import { styled } from "@mui/material";
-
 import { grey } from "@mui/material/colors";
 
 export const StyledButton = styled("button")<ButtonProps>(({ theme }) => ({

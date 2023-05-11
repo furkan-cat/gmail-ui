@@ -1,13 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { Box, AppBar as MUIAppBar, Stack } from "@mui/material";
-
 import AppBarSearch from "./AppBarSearch";
 import AppBarButtons from "./AppBarButtons";
-
 import { CONFIG } from "@/libs/constants";
 
+import { Box, AppBar as MUIAppBar, Stack } from "@mui/material";
 import { grey } from "@mui/material/colors";
 
 export type AppBarProps = {};

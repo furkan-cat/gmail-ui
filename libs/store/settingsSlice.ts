@@ -3,12 +3,12 @@ import { createSlice } from "@reduxjs/toolkit";
 const settingsSlice = createSlice({
   name: "settings",
   initialState: {
-    showSettingsPopover: false,
+    showSettings: false,
   },
   reducers: {
     togglePopover: (state) => {
-      state.showSettingsPopover = !state.showSettingsPopover;
-      console.log(state.showSettingsPopover);
+      state.showSettings = !state.showSettings;
+      console.log(state.showSettings);
     },
   },
 });

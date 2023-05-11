@@ -4,11 +4,16 @@ import CustomTab from "@/sections/Tab/Tab";
 import TabPanel from "@/sections/Tab/TabPanel";
 import { Stack } from "@mui/material";
 
+import SettingsPopover from "@/sections/SettingsPopover/SettingsPopover";
+
 const Home = () => {
   return (
-    <Stack direction="column" bgcolor={"#fff"} borderRadius={3}>
-      <CustomTab />
-      <TabPanel />
+    <Stack direction="row">
+      <Stack bgcolor={"#fff"} borderRadius={3} flex={1}>
+        <CustomTab />
+        <TabPanel />
+      </Stack>
+      <SettingsPopover />
     </Stack>
   );
 };
