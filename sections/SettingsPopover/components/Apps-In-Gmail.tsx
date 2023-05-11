@@ -1,11 +1,11 @@
 import Image from "next/image";
 
 import { Stack, Typography } from "@mui/material";
-import { StyledSettingsButton } from "./SettingsPopover";
+import { StyledSettingsButton } from "../SettingsPopover";
 
 const AppsInGmail = () => {
   return (
-    <Stack direction="column" px={2} py={1} gap={2}>
+    <Stack direction="column" px={2} py={1} gap={1}>
       <Typography sx={{ fontSize: "12px" }}>Apps in Gmail</Typography>
 
       <Stack direction="row" justifyContent="space-between">

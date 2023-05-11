@@ -8,7 +8,6 @@ const settingsSlice = createSlice({
   reducers: {
     togglePopover: (state) => {
       state.showSettings = !state.showSettings;
-      console.log(state.showSettings);
     },
   },
 });

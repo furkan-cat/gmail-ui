@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import Image from "next/image";
 
 import {
@@ -16,31 +16,8 @@ const Density = () => {
     setRadio(e.target.value);
   };
 
-  const densityItems = [
-    {
-      value: "default",
-      label: "Default",
-      control: <Radio size="small" />,
-      src: "/settings-density-default.png",
-      alt: "density-default",
-    },
-    {
-      value: "comfortable",
-      label: "Comfortable",
-      control: <Radio size="small" />,
-      src: "/settings-density-comfortable.png",
-      alt: "density-comfortable",
-    },
-    {
-      value: "compact",
-      label: "Compact",
-      control: <Radio size="small" />,
-      src: "/settings-density-compact.png",
-      alt: "density-compact",
-    },
-  ];
   return (
-    <Stack px={2} py={1} gap={2}>
+    <Stack px={2} py={1} gap={1}>
       <Typography sx={{ fontSize: "12px" }}>Density</Typography>
       <RadioGroup
         aria-labelledby="demo-controlled-radio-buttons-group"
@@ -74,3 +51,27 @@ const Density = () => {
 };
 
 export default Density;
+
+const densityItems = [
+  {
+    value: "default",
+    label: "Default",
+    control: <Radio size="small" />,
+    src: "/settings-density-default.png",
+    alt: "density-default",
+  },
+  {
+    value: "comfortable",
+    label: "Comfortable",
+    control: <Radio size="small" />,
+    src: "/settings-density-comfortable.png",
+    alt: "density-comfortable",
+  },
+  {
+    value: "compact",
+    label: "Compact",
+    control: <Radio size="small" />,
+    src: "/settings-density-compact.png",
+    alt: "density-compact",
+  },
+];
