@@ -34,7 +34,7 @@ const TabPanel = () => {
   }
 
   return (
-    <Box sx={{ height: "100vh" }}>
+    <Box height="100%">
       <Panel value={currentTab} index={0}>
         Blank Primary
       </Panel>

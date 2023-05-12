@@ -8,8 +8,8 @@ import SettingsPopover from "@/sections/SettingsPopover/SettingsPopover";
 
 const Home = () => {
   return (
-    <Stack direction="row">
-      <Stack bgcolor={"#fff"} borderRadius={3} flex={1}>
+    <Stack direction="row" height="100%">
+      <Stack bgcolor={"#fff"} borderRadius={3} flex={1} height="100%">
         <CustomTab />
         <TabPanel />
       </Stack>

@@ -9,7 +9,8 @@ const Main = styled("main")(({ theme }) => ({
   flexGrow: 1,
   padding: "16px",
   backgroundColor: "#f5f5f5",
-   overflow: "scrollY",
+  overflow: "scrollY",
+  height: "calc(100vh - 64px)",
 }));
 
 const AppLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
@@ -21,12 +22,7 @@ const AppLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
         <Box flex={1}>
           <AppBar />
 
-          <Stack
-            direction="row"
-            height="calc(100vh - 64px)"
-            // overflow="hidden"
-            bgcolor="#f5f5f5"
-          >
+          <Stack direction="row" overflow="hidden" bgcolor="#f5f5f5">
             <MenuDrawer />
 
             <Main>{children}</Main>

@@ -6,13 +6,13 @@ import AppsInGmail from "./components/Apps-In-Gmail";
 import Density from "./components/Density";
 import InboxType from "./components/InboxType";
 import ReadingPane from "./components/ReadingPane";
+import EmailThreading from "./components/EmailThreading";
 import { RootState } from "@/libs/store";
 
 import { Box, Divider, Stack } from "@mui/material";
 import { blue } from "@mui/material/colors";
 import styled from "@emotion/styled";
 import Theme from "./components/Theme";
-import EmailThreading from "./components/EmailThreading";
 
 const SettingsPopover = () => {
   const showSettings = useSelector(
@@ -20,16 +20,15 @@ const SettingsPopover = () => {
   );
 
   return (
-    <Box marginBottom={2}>
+    <Box height="100%">
       {showSettings ? (
         <Stack
           direction="column"
-          sx={{
-            width: "300px",
-            borderRadius: 3,
-            marginLeft: "10px",
-            backgroundColor: "#fff",
-          }}
+          width={300}
+          borderRadius={3}
+          marginLeft="10px"
+          bgcolor="#fff"
+          height="100%"
         >
           <Stack position="sticky">
             <QuickSettings />
@@ -38,7 +37,6 @@ const SettingsPopover = () => {
 
           <Box
             overflow="scroll"
-            height="90vh"
             sx={{
               "::-webkit-scrollbar-thumb": {
                 backgroundColor: "#cccccc",
