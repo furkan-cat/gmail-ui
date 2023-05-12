@@ -13,7 +13,7 @@ const QuickSettings = () => {
     <Stack px={2} py={1} gap={1}>
       <Stack
         direction="row"
-        alignItems={"center"}
+        alignItems="center"
         justifyContent="space-between"
       >
         <Typography fontSize={"13px"}>Quick Settings</Typography>
