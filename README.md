@@ -5,14 +5,6 @@ Project still in progress. You may check it via link below;
 Demo: https://gmail-business-ui.netlify.app/
 
 
-## Getting Started
+## Tech
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Next 13.4, Typescript, Redux Toolkit, Material UI 
