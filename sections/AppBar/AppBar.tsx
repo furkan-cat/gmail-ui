@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import AppBarSearch from "./AppBarSearch";
-import AppBarButtons from "./AppBarButtons";
+import AppBarSearch from "./components/AppBarSearch";
+import AppBarButtons from "./components/AppBarButtons";
 import { CONFIG } from "@/libs/constants";
 
 import { Box, AppBar as MUIAppBar, Stack } from "@mui/material";

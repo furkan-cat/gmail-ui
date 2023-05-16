@@ -1,18 +1,26 @@
+import { useRef, useState, FC } from "react";
 import Image from "next/image";
-import { useDispatch } from "react-redux";
 import { Button } from "@/components";
 import { togglePopover } from "@/libs/store/settingsSlice";
+import AppsWidget from "./AppsWidget";
 
+import { useDispatch } from "react-redux";
 import { Avatar, Box, IconButton, Stack } from "@mui/material";
 import SettingsOutlined from "@mui/icons-material/SettingsOutlined";
 import AppsRoundedIcon from "@mui/icons-material/AppsRounded";
 import HelpOutlineRoundedIcon from "@mui/icons-material/HelpOutlineRounded";
 
-const AppBarButtons: React.FC = () => {
+const AppBarButtons: FC = () => {
+  const [isAppsWidgetOpen, setIsAppsWidgetOpen] = useState(false);
   const dispatch = useDispatch();
+  const appWidgetRef = useRef(null);
 
   const handleToggleSettingsPopover = () => {
     dispatch(togglePopover());
+  };
+
+  const handleToggleAppsWidget = () => {
+    setIsAppsWidgetOpen((prev) => !prev);
   };
 
   return (
@@ -39,9 +47,21 @@ const AppBarButtons: React.FC = () => {
           </IconButton>
         </Box>
 
-        <IconButton color="inherit" aria-label="Apps">
-          <AppsRoundedIcon />
-        </IconButton>
+        <Box>
+          <IconButton
+            color="inherit"
+            aria-label="Apps"
+            ref={appWidgetRef}
+            onClick={handleToggleAppsWidget}
+          >
+            <AppsRoundedIcon />
+          </IconButton>
+          <AppsWidget
+            isOpen={isAppsWidgetOpen}
+            refCurrent={appWidgetRef}
+            toggleFunction={handleToggleAppsWidget}
+          />
+        </Box>
       </Stack>
 
       <Button variant="default">

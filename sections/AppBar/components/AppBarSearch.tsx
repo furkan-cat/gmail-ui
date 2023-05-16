@@ -55,7 +55,7 @@ const AppBarSearch = () => {
           "& > .MuiPopover-paper": {
             maxWidth: "720px",
             width: "100%",
-            borderRadius: 0,
+            borderRadius: 2,
             padding: "24px",
           },
         }}
